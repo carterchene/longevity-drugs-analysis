@@ -1,7 +1,5 @@
 # DrugAge Explorer: Longevity Compound Analysis Pipeline
 
-![Project Overview](path_to_overview_image.png)
-
 ## Project Overview
 
 DrugAge Explorer is a comprehensive data engineering project that processes and visualizes data from the DrugAge database, focusing on compounds that affect lifespan in model organisms. This project demonstrates a full-stack data pipeline, from web scraping to data visualization, all orchestrated by Dagster.
@@ -19,7 +17,7 @@ DrugAge Explorer is a comprehensive data engineering project that processes and 
 
 ## Architecture
 
-![Architecture Diagram](path_to_architecture_diagram.png)
+![Architecture Diagram](images/architecture.png)
 
 1. **Orchestration**: Dagster manages the entire data pipeline flow.
 2. **Data Extraction**: Python scripts with Selenium scrape the DrugAge database.
@@ -43,7 +41,7 @@ DrugAge Explorer is a comprehensive data engineering project that processes and 
 
 ## Dagster Workflow
 
-![Dagster DAG](path_to_dagster_dag.png)
+![Dagster DAG](images/dagster-dag.png.png)
 
 Dagster orchestrates our entire data pipeline, providing:
 - Asset-based data orchestration
