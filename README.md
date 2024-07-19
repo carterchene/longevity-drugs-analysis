@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-DrugAge Explorer is a comprehensive data engineering project that processes and visualizes data from the DrugAge database, focusing on compounds that affect lifespan in model organisms. This project demonstrates a full-stack data pipeline, from web scraping to data visualization.
+DrugAge Explorer is a comprehensive data engineering project that processes and visualizes data from the DrugAge database, focusing on compounds that affect lifespan in model organisms. This project demonstrates a full-stack data pipeline, from web scraping to data visualization, all orchestrated by Dagster.
 
 ### Key Features
 
@@ -15,20 +15,23 @@ DrugAge Explorer is a comprehensive data engineering project that processes and 
 - 📊 Data Visualization: Presents insights through a Streamlit app
 - 🐳 Containerization: Dockerized for easy deployment
 - ☁️ Cloud Hosting: Deployed on Azure App Service
+- 🎭 Orchestration: Managed end-to-end with Dagster
 
 ## Architecture
 
 ![Architecture Diagram](path_to_architecture_diagram.png)
 
-1. **Data Extraction**: Python scripts with Selenium scrape the DrugAge database.
-2. **Local Storage**: Raw data is stored in DuckDB for initial processing.
-3. **Data Transformation**: dbt models clean and transform the data.
-4. **Cloud Storage**: Processed data is loaded into Google BigQuery.
-5. **Visualization**: A Streamlit app queries BigQuery and presents interactive visualizations.
-6. **Deployment**: The app is containerized with Docker and hosted on Azure App Service.
+1. **Orchestration**: Dagster manages the entire data pipeline flow.
+2. **Data Extraction**: Python scripts with Selenium scrape the DrugAge database.
+3. **Local Storage**: Raw data is stored in DuckDB for initial processing.
+4. **Data Transformation**: dbt models clean and transform the data.
+5. **Cloud Storage**: Processed data is loaded into Google BigQuery.
+6. **Visualization**: A Streamlit app queries BigQuery and presents interactive visualizations.
+7. **Deployment**: The app is containerized with Docker and hosted on Azure App Service.
 
 ## Technologies Used
 
+- Dagster (Orchestration)
 - Python
 - Selenium
 - DuckDB
@@ -38,9 +41,20 @@ DrugAge Explorer is a comprehensive data engineering project that processes and 
 - Docker
 - Azure App Service
 
+## Dagster Workflow
+
+![Dagster DAG](path_to_dagster_dag.png)
+
+Dagster orchestrates our entire data pipeline, providing:
+- Asset-based data orchestration
+- Dependency management between tasks
+- Scheduling and triggering of data updates
+- Monitoring and alerting
+- Data lineage and observability
+
 ## Getting Started
 
-(Include instructions for setting up and running the project locally)
+(Include instructions for setting up and running the project locally, including Dagster setup)
 
 ## Data Insights
 
@@ -50,9 +64,10 @@ DrugAge Explorer is a comprehensive data engineering project that processes and 
 
 ## Future Enhancements
 
-- Implement automated data refresh pipeline
+- Implement automated data refresh pipeline using Dagster's scheduling
 - Expand analysis to include more datasets from genomics.senescence.info
 - Develop machine learning models for lifespan prediction
+- Enhance Dagster observability with custom sensors and monitoring
 
 ## Contact
 
