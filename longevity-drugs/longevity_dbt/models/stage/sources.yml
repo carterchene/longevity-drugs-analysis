@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    description: 'scraped drug age'
+    schema: raw
+    tables:
+      - name: drug_age
+        meta: 
+          dagster: 
+            asset_key: ['scrape_drug_age']

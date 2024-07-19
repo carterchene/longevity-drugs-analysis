@@ -1,0 +1,11 @@
+
+version: 2
+
+models:
+  - name: raw__drug_age_clean
+    config: 
+      enabled: true
+      tags: duckdb
+      schema: raw
+      alias: drug_age_clean
+      materialized: table
