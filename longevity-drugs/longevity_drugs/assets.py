@@ -9,6 +9,7 @@ import time
 from .project import longevity_dbt
 from dagster import asset, MaterializeResult, AssetExecutionContext
 from dagster_dbt import DbtCliResource, dbt_assets
+from dagster_gcp import BigQueryResource
 
 @asset(description="Goes to drug age website and scrapes data from html tables.")
 def scrape_drug_age() -> MaterializeResult: 
@@ -61,6 +62,22 @@ def scrape_drug_age() -> MaterializeResult:
             "num_records": len(all_data)
         }
     )
+
+@asset(deps=['datamart__longevity_analysis']) # dbt models can be referenced just as there model name which is sweet
+def serve_datamart_gcp(bigquery: BigQueryResource) -> None:
+    # get duckdb data
+    with duckdb.connect('duckdb_database/drug_age.db') as con:
+        longevity_df = con.execute('select * from datamart.longevity_analysis').df()
+    
+    with bigquery.get_client() as client:
+        job = client.load_table_from_dataframe(
+            dataframe=longevity_df,
+            destination='datamart.longevity_analysis'
+        )
+
+        job.result()
+    
+
 
 @dbt_assets(manifest=longevity_dbt.manifest_path)
 def my_dbt_assets(context: AssetExecutionContext, dbt: DbtCliResource):

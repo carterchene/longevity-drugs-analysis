@@ -1,0 +1,11 @@
+
+version: 2
+
+models:
+  - name: species_dim
+    config: 
+      enabled: true
+      tags: duckdb
+      schema: datamart
+      alias: species_dim
+      materialized: table

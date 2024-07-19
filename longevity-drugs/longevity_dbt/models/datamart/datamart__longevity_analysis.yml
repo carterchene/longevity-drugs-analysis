@@ -1,0 +1,11 @@
+
+version: 2
+
+models:
+  - name: datamart__longevity_analysis
+    config: 
+      enabled: true
+      tags: duckdb
+      schema: datamart
+      alias: longevity_analysis
+      materialized: table

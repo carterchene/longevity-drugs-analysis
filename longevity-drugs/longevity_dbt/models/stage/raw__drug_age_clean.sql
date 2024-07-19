@@ -10,11 +10,18 @@ with raw_data as    (
         "Significant?NNDYx" AS is_significant,
         "Referencex" AS reference
     from {{source('raw','drug_age')}}
-    where 1=1
 
 )
 
+,exclude_nulls as (
+    select *
+    from raw_data
+    where 1=1
+    and compound_formulation is not null
+    and species is not null
 
-select * from raw_data
+)
+
+select * from exclude_nulls
 
 
