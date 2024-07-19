@@ -54,25 +54,15 @@ Dagster orchestrates our entire data pipeline, providing:
 
 ## Getting Started
 
-(Include instructions for setting up and running the project locally, including Dagster setup)
+To run it locally: 
+1. Clone repo.
+2. Create virtual enviornment with `python -m venv ./.venv`
+3. Activate venv with `./.venv/Scripts/activate`
+4. Install requirements via `pip install -r requirements.txt`
+5. In the longevity-drugs folder, create a new folder "duckdb_database". This is where the duckdb database will be made.
+6. in terminal, cd to longevity-drugs. Run `dagster dev`
+7. The dagster webserver should be running now on `localhost:3000`
+8. Can see a global view of the DAG in "Assets".
+9. For the final node in the dag to run (load to google big query), you would need to set up a GCP account and project. Then follow [this documentation](https://docs.dagster.io/integrations/bigquery/using-bigquery-with-dagster#option-1-using-the-bigquery-resource). 
 
-## Data Insights
 
-![Sample Visualization](path_to_sample_visualization.png)
-
-(Brief description of key findings or interesting data points)
-
-## Future Enhancements
-
-- Implement automated data refresh pipeline using Dagster's scheduling
-- Expand analysis to include more datasets from genomics.senescence.info
-- Develop machine learning models for lifespan prediction
-- Enhance Dagster observability with custom sensors and monitoring
-
-## Contact
-
-[Your Name] - [Your Email]
-
-Project Link: [GitHub Repo URL]
-
-Live Demo: [Streamlit App URL]
