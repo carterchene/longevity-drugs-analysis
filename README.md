@@ -41,7 +41,7 @@ DrugAge Explorer is a comprehensive data engineering project that processes and 
 
 ## Dagster Workflow
 
-![Dagster DAG](images/dagster-dag.png.png)
+![Dagster DAG](images/dagster-dag.png)
 
 Dagster orchestrates our entire data pipeline, providing:
 - Asset-based data orchestration
