@@ -1,7 +1,9 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import duckdb
+from google.oauth2 import service_account
+from google.cloud import bigquery
+from pandas_gbq import read_gbq
 
 st.set_page_config(
     layout='wide'
@@ -9,12 +11,16 @@ st.set_page_config(
 st.title("Drug Age Longevity Analysis")
 st.write("This Streamlit app analyzes data from https://genomics.senescence.info/")
 
-# Load the dataset
-database_location = r'C:\Users\Carter Dakota\portfolio\longevity-drugs-analysis\longevity-drugs\duckdb_database\drug_age.db'
-database_location = '/usr/src/app/drug_age.db'
-with duckdb.connect(database=database_location) as con:
-    query = 'SELECT * FROM datamart.longevity_analysis'
-    drug_age_data = con.execute(query).df()
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"]
+)
+
+@st.cache_data
+def load_data():
+    df = read_gbq('SELECT * FROM datamart.longevity_analysis', credentials=credentials)
+    return df
+
+drug_age_data = load_data()
 
 drug_age_data['dosage'] = drug_age_data['dosage'].astype(str)
 

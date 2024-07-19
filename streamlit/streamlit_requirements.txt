@@ -1,4 +1,5 @@
 pandas
 streamlit
 matplotlib
-duckdb
+google-cloud-bigquery
+pandas-gbq
