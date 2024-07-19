@@ -10,6 +10,7 @@ with raw_data as    (
         "Significant?NNDYx" AS is_significant,
         "Referencex" AS reference
     from {{source('raw','drug_age')}}
+    where 1=1
 
 )
 

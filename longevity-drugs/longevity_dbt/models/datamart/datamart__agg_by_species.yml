@@ -1,0 +1,11 @@
+
+version: 2
+
+models:
+  - name: datamart__agg_by_species
+    config: 
+      enabled: true
+      tags: duckdb
+      schema: datamart
+      alias: agg_by_species
+      materialized: table
