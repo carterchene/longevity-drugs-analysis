@@ -6,7 +6,7 @@ DrugAge Explorer is a comprehensive data engineering project that processes and 
 
 ### Key Features
 
-- 🕷️ Web Scraping: Extracts data from [genomics.senescence.info](genomics.senescence.info)
+- 🕷️ Web Scraping: Extracts data from [genomics.senescence.info](https://genomics.senescence.info/)
 - 🗃️ Data Storage: Utilizes DuckDB for efficient data handling
 - 🧹 Data Transformation: Employs dbt for data cleaning and modeling
 - ☁️ Cloud Integration: Loads data into Google BigQuery
