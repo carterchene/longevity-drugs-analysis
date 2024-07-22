@@ -39,6 +39,17 @@ DrugAge Explorer is a comprehensive data engineering project that processes and 
 - Docker
 - Azure App Service
 
+<p align="center">
+  <img src="https://dagster.io/images/brand/logos/dagster-reversed-horizontal.svg?_gl=1*vuyeli*_up*MQ..*_ga*MjU4Njg2OTY4LjE3MjE2MTAyMjA.*_ga_84VRQZG7TV*MTcyMTYxMDIyMC4xLjAuMTcyMTYxMDIyMC4wLjAuMA.." alt="Dagster" width="100"/>
+  <img src="https://duckdb.org/images/logo-dl/DuckDB_Logo-stacked-dark-mode.svg" alt="DuckDB" width="50"/>
+  <img src="https://docs.getdbt.com/img/dbt-logo.svg" alt="dbt" width="50"/>
+  <img src="https://www.vectorlogo.zone/logos/google_bigquery/google_bigquery-ar21.svg" alt="BigQuery" width="70"/>
+  <img src="https://streamlit.io/images/brand/streamlit-mark-color.svg" alt="Streamlit" width="50"/>
+  <img src="images/docker-logo.svg" alt="Docker" width="50"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/150px-Microsoft_Azure.svg.png" alt="Azure" width="50"/>
+</p>
+
+
 ## Dagster Workflow
 
 ![Dagster DAG](images/dagster.png)
