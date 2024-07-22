@@ -45,7 +45,6 @@ DrugAge Explorer is a comprehensive data engineering project that processes and 
   <img src="https://docs.getdbt.com/img/dbt-logo.svg" alt="dbt" width="50"/>
   <img src="https://www.vectorlogo.zone/logos/google_bigquery/google_bigquery-ar21.svg" alt="BigQuery" width="70"/>
   <img src="https://streamlit.io/images/brand/streamlit-mark-color.svg" alt="Streamlit" width="50"/>
-  <img src="images/docker-logo.svg" alt="Docker" width="50"/>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/150px-Microsoft_Azure.svg.png" alt="Azure" width="50"/>
 </p>
 
